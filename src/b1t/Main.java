@@ -27,6 +27,35 @@ public class Main extends Application {
     public static void main(String[] args) {
 //        launch(args);
         Calculator calc = new Calculator();
-        System.out.println("Answer: " + calc.binary_to_dec("100110010011001010111011"));
+        String binary_input = "1101001111";
+
+        System.out.println("binary_input: " + binary_input);
+        System.out.println();
+
+        System.out.println("binary_to_dec: " + calc.binary_to_dec(binary_input));
+        System.out.println("binary_to_hex: " + calc.binary_to_hex(binary_input));
+        System.out.println();
+
+
+        String dec_input = "9167";
+
+        System.out.println("dec_input: " + dec_input);
+        System.out.println();
+
+        System.out.println("dec_to_hex: " + calc.dec_to_hex(dec_input));
+        System.out.println("dec_to_binary: " + calc.dec_to_binary(dec_input));
+        System.out.println();
+
+        String hex_input = "A93C";
+
+        System.out.println("hex_input: " + hex_input);
+        System.out.println();
+
+        System.out.println("hex_to_dec: " + calc.hex_to_dec(hex_input));
+        System.out.println("hex_to_binary: " + calc.hex_to_binary(hex_input));
+
+
+
+
     }
 }
