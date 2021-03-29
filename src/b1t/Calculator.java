@@ -18,6 +18,7 @@ public class Calculator {
     public String hex;
     public String dec;
 
+//------------------------------------------------
 
     // !--Constructor--!
     public Calculator()
@@ -27,6 +28,26 @@ public class Calculator {
         this.dec = null;
     }
 
+//------------------------------------------------
+
+    // !--Set Methods--!
+    public void setBinary(String binary)
+    {
+        this.binary = binary;
+    }
+
+    public void setDec(String decimal)
+    {
+        this.dec = decimal;
+    }
+
+    public void setHex(String hexadecimal)
+    {
+        this.hex = hexadecimal;
+    }
+
+//------------------------------------------------
+//      Conversion Methods
 
     /*
         Binary to Decimal conversion
@@ -211,6 +232,8 @@ public class Calculator {
             }
     }
 
+//------------------------------------------------
+//      Helper Methods
 
     public String add_to_hex()
     {
@@ -226,6 +249,30 @@ public class Calculator {
 
 
         return "";
+    }
+
+    //checks that input string follows binary notation
+    public boolean binaryCheck(String input)
+    {
+
+
+        return false;
+    }
+
+    //checks that string input follows decimal notation
+    public boolean decCheck(String input)
+    {
+
+
+        return false;
+    }
+
+    //checks that string input follows hexadecimal notation
+    public boolean hexCheck(String input)
+    {
+
+
+        return false;
     }
 
 
