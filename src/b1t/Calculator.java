@@ -59,8 +59,12 @@ public class Calculator {
 
         for (int i = 0; i < binary.length(); i++)
         {
-            int bit = Integer.parseInt((binary.substring(i, i+1)));
-            if (bit == 1)                       //only do the calculation if the bit == 1
+            String current = binary.substring(i, i+1);
+            if(!binaryCheck(current))                   //Applicability Check
+                return "";
+
+            int bit = Integer.parseInt(current);
+            if (bit == 1)                           //only do the calculation if the bit == 1
             {
                 temp += Math.pow(2, power);
             }
@@ -87,6 +91,14 @@ public class Calculator {
             String temp = this.binary.substring(i - 4, i);  //still read in bytes beginning to end
             temp = binary_to_dec(temp);                 //puts string value of current byte into temp
 
+            int j = 0;
+            while(j < 4)                                //Applicability Check
+            {
+                if(!binaryCheck(temp.substring(j, j+1)))
+                    return "";
+                j++;
+            }
+
             int currentByte = Integer.parseInt(temp);   //parses int value from temp of the current byte
             dec_hex_switch(currentByte);            //switch case, put into separate method
         }
@@ -101,12 +113,19 @@ public class Calculator {
         this.dec = decimal;
         this.hex = "";
 
+        for(int i = 0; i < this.dec.length(); i++)       //Applicability Check
+        {
+            if(!decCheck(this.dec.substring(i, i+1)))
+                return "";
+        }
+
         long num = Integer.parseInt(decimal);
         long quotient = num / 16;
         long remainder = num % 16;
 
         while(quotient != 0)                            //until the quotient is 0, repeat
         {
+
             dec_hex_switch((int)(remainder));
 
             remainder = quotient % 16;      //get next remainder before overwriting quotient
@@ -123,6 +142,12 @@ public class Calculator {
     {
         this.dec = decimal;
         this.binary = "";
+
+        for(int i = 0; i < this.dec.length(); i++)       //Applicability Check
+        {
+            if(!decCheck(this.dec.substring(i, i+1)))
+                return "";
+        }
 
         int quotient;
         int num = Integer.parseInt(decimal);
@@ -199,6 +224,8 @@ public class Calculator {
         return this.binary;
     }
 
+//------------------------------------------------
+//      Helper Methods
 
     public void dec_hex_switch(int input)
     {
@@ -232,8 +259,6 @@ public class Calculator {
             }
     }
 
-//------------------------------------------------
-//      Helper Methods
 
     public String add_to_hex()
     {
@@ -254,7 +279,8 @@ public class Calculator {
     //checks that input string follows binary notation
     public boolean binaryCheck(String input)
     {
-
+        if(input == "1" || input == "0")
+            return true;
 
         return false;
     }
@@ -262,15 +288,19 @@ public class Calculator {
     //checks that string input follows decimal notation
     public boolean decCheck(String input)
     {
-
-
-        return false;
-    }
-
-    //checks that string input follows hexadecimal notation
-    public boolean hexCheck(String input)
-    {
-
+        if(     input == "0" ||
+                input == "1" ||
+                input == "2" ||
+                input == "3" ||
+                input == "4" ||
+                input == "5" ||
+                input == "6" ||
+                input == "7" ||
+                input == "8" ||
+                input == "9"    ) //this sucks but can't think of anything else
+        {
+           return true;
+        }
 
         return false;
     }

@@ -5,8 +5,16 @@ import static org.junit.Assert.assertEquals;
 
 public class CalculatorTests {
 
+//------------------------------------------
+//      Test Cases
+//------------------------------------------
+
+
+//------------------------------------------
+//      Valid Input Test Cases
+
     @Test
-    void binaryToDec()
+    void binaryToDec_ValidInputs()
     {
         Calculator calc = new Calculator();
         String input = buildBinaryString(0, 20);
@@ -16,7 +24,7 @@ public class CalculatorTests {
     }
 
     @Test
-    void binaryToHex()
+    void binaryToHex_ValidInputs()
     {
         Calculator calc = new Calculator();
         String input = buildBinaryString(0, 20);
@@ -26,7 +34,7 @@ public class CalculatorTests {
     }
 
     @Test
-    void decToHex()
+    void decToHex_ValidInputs()
     {
         Calculator calc = new Calculator();
 
@@ -34,7 +42,7 @@ public class CalculatorTests {
     }
 
     @Test
-    void decToBinary()
+    void decToBinary_ValidInputs()
     {
         Calculator calc = new Calculator();
 
@@ -42,7 +50,7 @@ public class CalculatorTests {
     }
 
     @Test
-    void hexToDec()
+    void hexToDec_ValidInputs()
     {
         Calculator calc = new Calculator();
 
@@ -50,12 +58,70 @@ public class CalculatorTests {
     }
 
     @Test
-    void hexToBinary()
+    void hexToBinary_ValidInputs()
     {
         Calculator calc = new Calculator();
 
 
     }
+
+//--------------------------------------------------------
+//      Invalid Input Test Cases
+
+    @Test
+    void binaryToDec_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+    @Test
+    void binaryToHex_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+    @Test
+    void decToHex_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+    @Test
+    void decToBinary_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+    @Test
+    void hexToDec_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+    @Test
+    void hexToBinary_InvalidInputs()
+    {
+        Calculator calc = new Calculator();
+
+
+    }
+
+
+
+
+
+//--------------------------------------------------------
+//      Helper Functions
 
     public String buildBinaryString(int min, int max)
     {
