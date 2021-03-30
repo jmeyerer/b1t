@@ -1,22 +1,34 @@
 package b1t;
 
-import org.junit.Test;
+import org.junit.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.*;
 import static org.junit.Assert.assertEquals;
 
+//TODO:: Add Parameterized Tests
+
+@RunWith(Parameterized.class)
 public class CalculatorTests {
 
 //------------------------------------------
 //      Test Cases
 //------------------------------------------
+//      Global Variables
 
+    Calculator calc;
 
 //------------------------------------------
 //      Valid Input Test Cases
 
+    @Before                     //initialize new calculator object before each test case
+    public void initialize()
+    {
+        calc = new Calculator();
+    }
+
     @Test
     void binaryToDec_ValidInputs()
     {
-        Calculator calc = new Calculator();
         String input = buildBinaryString(0, 20);
         int convertedDecimal = Integer.parseInt(calc.binary_to_dec(input));
 
@@ -26,7 +38,6 @@ public class CalculatorTests {
     @Test
     void binaryToHex_ValidInputs()
     {
-        Calculator calc = new Calculator();
         String input = buildBinaryString(0, 20);
         int convertedHex = Integer.parseInt(calc.binary_to_hex(input));
 
@@ -36,7 +47,6 @@ public class CalculatorTests {
     @Test
     void decToHex_ValidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -44,7 +54,6 @@ public class CalculatorTests {
     @Test
     void decToBinary_ValidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -52,7 +61,6 @@ public class CalculatorTests {
     @Test
     void hexToDec_ValidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -60,7 +68,6 @@ public class CalculatorTests {
     @Test
     void hexToBinary_ValidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -71,7 +78,6 @@ public class CalculatorTests {
     @Test
     void binaryToDec_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -79,7 +85,6 @@ public class CalculatorTests {
     @Test
     void binaryToHex_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -87,7 +92,6 @@ public class CalculatorTests {
     @Test
     void decToHex_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -95,7 +99,6 @@ public class CalculatorTests {
     @Test
     void decToBinary_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -103,7 +106,6 @@ public class CalculatorTests {
     @Test
     void hexToDec_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
@@ -111,7 +113,6 @@ public class CalculatorTests {
     @Test
     void hexToBinary_InvalidInputs()
     {
-        Calculator calc = new Calculator();
 
 
     }
