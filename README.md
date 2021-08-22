@@ -1,0 +1,2 @@
+# About this project
+b1t is a Binary/Decimal/Hexadecimal calculator and converter. The goal of this project is to make an intuitive GUI interface that allows the user to switch between converting and performing mathematical operations from any of the three different base values.
